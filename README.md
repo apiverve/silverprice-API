@@ -70,10 +70,10 @@ api.execute(function (error, data) {
   "error": null,
   "data": {
     "currency": "USD",
-    "gram": 1.02,
-    "kilogram": 1024.71,
-    "ounce": 29.05,
-    "lastUpdated": 1725181203
+    "gram": 1.17,
+    "kilogram": 1173.57,
+    "ounce": 33.27,
+    "lastUpdated": 1740074714
   },
   "code": 200
 }
@@ -101,7 +101,7 @@ All usage of the APIVerve website, API, and services is subject to the [APIVerve
 ## License
 Licensed under the The MIT License (MIT)
 
-Copyright (&copy;) 2024 APIVerve, and Evlar LLC
+Copyright (&copy;) 2025 APIVerve, and EvlarSoft LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
