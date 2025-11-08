@@ -1,5 +1,4 @@
-Silver Price API
-============
+# Silver Price API
 
 Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
 
@@ -7,54 +6,62 @@ Silver Price is a simple tool for getting the current price of silver. It return
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Javascript Wrapper for the [Silver Price API](https://apiverve.com/marketplace/api/silverprice)
+This is a Javascript Wrapper for the [Silver Price API](https://apiverve.com/marketplace/silverprice)
 
 ---
 
 ## Installation
-	npm install @apiverve/silverprice --save
+
+Using npm:
+```shell
+npm install @apiverve/silverprice
+```
+
+Using yarn:
+```shell
+yarn add @apiverve/silverprice
+```
 
 ---
 
 ## Configuration
 
-Before using the silverprice API client, you have to setup your account and obtain your API Key.  
+Before using the Silver Price API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ---
 
-## Usage
+## Quick Start
 
-The Silver Price API documentation is found here: [https://docs.apiverve.com/api/silverprice](https://docs.apiverve.com/api/silverprice).  
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+
+The Silver Price API documentation is found here: [https://docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
-```
-var silverpriceAPI = require('@apiverve/silverprice');
-var api = new silverpriceAPI({
-    api_key: [YOUR_API_KEY],
-    secure: true //(Optional, defaults to true)
+```javascript
+const silverpriceAPI = require('@apiverve/silverprice');
+const api = new silverpriceAPI({
+    api_key: '[YOUR_API_KEY]'
 });
 ```
 
 ---
 
+## Usage
+
+---
 
 ### Perform Request
-Using the API client, you can perform requests to the API.
 
-###### Define Query
+Using the API is simple. All you have to do is make a request. The API will return a response with the data you requested.
 
-```
+```javascript
 var query = {
   currency: "USD"
 };
-```
 
-###### Simple Request (using Callback)
-
-```
 api.execute(query, function (error, data) {
     if (error) {
         return console.error(error);
@@ -64,9 +71,52 @@ api.execute(query, function (error, data) {
 });
 ```
 
-###### Example Response
+---
 
+### Using Promises
+
+You can also use promises to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+var query = {
+  currency: "USD"
+};
+
+api.execute(query)
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
+
+---
+
+### Using Async/Await
+
+You can also use async/await to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+async function makeRequest() {
+    var query = {
+  currency: "USD"
+};
+
+    try {
+        const data = await api.execute(query);
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
+## Example Response
+
+```json
 {
   "status": "ok",
   "error": null,
@@ -76,8 +126,7 @@ api.execute(query, function (error, data) {
     "kilogram": 1173.57,
     "ounce": 33.27,
     "lastUpdated": 1740074714
-  },
-  "code": 200
+  }
 }
 ```
 
@@ -90,6 +139,7 @@ Need any assistance? [Get in touch with Customer Support](https://apiverve.com/c
 ---
 
 ## Updates
+
 Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Twitter.
 
 ---
